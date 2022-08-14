@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+        <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            VANTA.NET({
+                el: "#wrapper",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                color: 0x00b300,
+                backgroundColor: 0x0,
+                maxDistance: 22.00
+            })
+        });
+        </script>
+        <title>File Compressor</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Oswald:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <style type="text/css">
+            html, body {
+                height: 100%;
+                margin: 0;
+                font-family: 'Oswald', sans-serif;
+            }
+            #wrapper {
+                min-height: 100%;
+            }
+            .heading{
+                font-family: 'Kalam', cursive;
+            }
+
+
+            .glow-on-hover {
+                font-weight: 600;
+                width: 220px;
+                height: 50px;
+                border: none;
+                outline: none;
+                color: #fff;
+                background: #111;
+                cursor: pointer;
+                position: relative;
+                z-index: 0;
+                border-radius: 10px;
+            }
+
+            .glow-on-hover:before {
+                content: '';
+                background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+                position: absolute;
+                top: -2px;
+                left:-2px;
+                background-size: 400%;
+                z-index: -1;
+                filter: blur(5px);
+                width: calc(100% + 4px);
+                height: calc(100% + 4px);
+                animation: glowing 20s linear infinite;
+                opacity: 0;
+                transition: opacity .3s ease-in-out;
+                border-radius: 10px;
+            }
+
+            .glow-on-hover:active {
+                color: #000
+            }
+
+            .glow-on-hover:active:after {
+                background: transparent;
+            }
+
+            .glow-on-hover:hover:before {
+                opacity: 1;
+            }
+
+            .glow-on-hover:after {
+                z-index: -1;
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: #111;
+                left: 0;
+                top: 0;
+                border-radius: 10px;
+            }
+
+            @keyframes glowing {
+                0% { background-position: 0 0; }
+                50% { background-position: 400% 0; }
+                100% { background-position: 0 0; }
+            }
+        </style>
+        <!--[if lte IE 6]>
+        <style type="text/css">
+            #container {
+                height: 100%;
+            }
+        </style>
+        <![endif]-->
+    </head>
+
+    <body style="background-color: black; align-items: center; margin-top:-30px;">
+        <div style="color: white; text-align:center;" id="wrapper">
+            <h1 style="font-size: 44px; font-weight:700; padding-top: 120px;">PIED PIPER</h1>
+            <h3 class="heading" style="margin-top:-10px;" >a file Compressor using</h3>
+            <h1 style="color:#00b300; font-weight:700; font-size: 64px; margin-top:-10px;"><i>HUFFMAN CODING</i></h1>
+            <a href="/compress"><button class="glow-on-hover" >COMPRESS</button></a>&#160;&#160;&#160;&#160;&#160;
+            <a href="/decompress"><button class="glow-on-hover">DECOMPRESS</button></a>
+        </div>
+    </body>
+</html>
